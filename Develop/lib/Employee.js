@@ -3,15 +3,15 @@ var info = require("../app")
 
 class Employee {
     constructor(name, email, id) {
-        if(!name) {
-            throw new Error("You are missing the name.");
-          }
-          if (!email) {
-            throw new Error("You are missing your email.");
-          }
-          if (!id) {
-            throw new Error("You are missing your ID.");
-          }
+        // if(!name) {
+        //     throw new Error("You are missing the name.");
+        //   }
+        //   if (!email) {
+        //     throw new Error("You are missing your email.");
+        //   }
+        //   if (!id) {
+        //     throw new Error("You are missing your ID.");
+        //   }
           this.name = name;
           this.email = email;
           this.id = id;
