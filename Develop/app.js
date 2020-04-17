@@ -15,7 +15,7 @@ const teamMembers = [];
 // and to create objects for each team member (using the correct classes as blueprints!)
 
 // manager-specific questions
-function managerInfo(name, email, id) {
+function managerInfo(name, id, email) {
     inquirer
         .prompt(
             {
@@ -25,7 +25,7 @@ function managerInfo(name, email, id) {
             }
 
         ).then(response => {
-            const managerInfo = new Manager(name, email, id, response.office)
+            const managerInfo = new Manager(name, id, email, response.office)
             console.log(managerInfo)
             // building team members
             teamMembers.push(managerInfo)
@@ -34,7 +34,7 @@ function managerInfo(name, email, id) {
         })
 }
 // make inquirer for each type of team member and make new object for each, push to global array
-function engineerDetails(name, email, id) {
+function engineerDetails(name, id, email) {
     inquirer
         .prompt([
             {
@@ -44,7 +44,7 @@ function engineerDetails(name, email, id) {
             }
         ]).then(response => {
 
-            const engineerInfo = new Engineer(name, email, id, response.github)
+            const engineerInfo = new Engineer(name, id, email, response.github)
             // console.log(engineerInfo);
             // building team members
             teamMembers.push(engineerInfo);
@@ -52,7 +52,7 @@ function engineerDetails(name, email, id) {
         })
 }
 
-function internDetails(name, email, id) {
+function internDetails(name, id, email) {
     inquirer
         .prompt(
             {
@@ -62,7 +62,7 @@ function internDetails(name, email, id) {
             }
         ).then(response => {
 
-            const internInfo = new Intern(response.school, name, email, id)
+            const internInfo = new Intern(name, id, email, response.school)
             // building team members
             teamMembers.push(internInfo);
             employeeRole();
@@ -96,17 +96,17 @@ function employeeDetails(roleType) {
         ]).then(res => {
             console.log("employee details", res)
 
-            if(roleType === "manager") {
+            if(roleType === "Manager") {
                 
-                managerInfo(res.name, res.email, res.id);
+                managerInfo(res.name, res.id, res.email,);
             } 
-            else if(roleType === "engineer") {
+            else if(roleType === "Engineer") {
                 
-                engineerDetails(res.name, res.email, res.id)
+                engineerDetails(res.name, res.id, res.email)
             } 
-            else if(roleType === "intern") {
+            else if(roleType === "Intern") {
                 
-                internDetails(res.name, res.email, res.id)
+                internDetails(res.name, res.id, res.email)
             }
         })
 }
@@ -117,7 +117,7 @@ function employeeRole() {
                 type: "list",
                 message: "What is your employee role?",
                 name: "role",
-                choices: ["manager", "engineer", "intern", "none"]
+                choices: ["Manager", "Engineer", "Intern", "none"]
 
             }
         ]).then(res => {

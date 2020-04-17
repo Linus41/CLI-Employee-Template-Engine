@@ -1,21 +1,11 @@
-// TODO: Write code to define and export the Employee class
-var info = require("../app")
-
+// changed from class to constructor per test error
 class Employee {
-    constructor(name, email, id) {
-        // if(!name) {
-        //     throw new Error("You are missing the name.");
-        //   }
-        //   if (!email) {
-        //     throw new Error("You are missing your email.");
-        //   }
-        //   if (!id) {
-        //     throw new Error("You are missing your ID.");
-        //   }
-          this.name = name;
-          this.email = email;
-          this.id = id;
+    constructor(name, id, email) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
     }
+
     getName() {
         return this.name;
     }
@@ -23,12 +13,14 @@ class Employee {
     getRole() {
         return "Employee";
     }
+
     getId() {
         return this.id;
     }
     getEmail() {
         return this.email;
     }
+
 }
 
 module.exports = Employee

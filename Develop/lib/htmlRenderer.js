@@ -1,3 +1,4 @@
+// how is this file connected with the other js files? How is it getting info?
 const path = require("path");
 const fs = require("fs");
 
