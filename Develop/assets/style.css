@@ -38,12 +38,13 @@ h3 {
 
 .list-group-item {
     background-color: rgb(255, 60, 0);
-    opacity: 50%;
+    opacity: 90%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     
 }
 
 a, a:hover {
-    color: black;
+    color: #212529;
 }
 .card-header:first-child {
     border-top-left-radius: 24px 24px;
@@ -53,6 +54,10 @@ a, a:hover {
     
 }
 
+.card-header {
+    height: 130px;
+    margin: auto;
+}
 .card {
     background-color: peachpuff;
     border: 0;
