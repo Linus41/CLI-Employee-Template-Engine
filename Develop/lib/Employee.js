@@ -1,4 +1,3 @@
-// changed from class to constructor per test error
 class Employee {
     constructor(name, id, email) {
         this.name = name;
